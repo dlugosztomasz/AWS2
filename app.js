@@ -9,7 +9,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.send("<html><div style='text-align:center;margin-top:20%'><h1>Main Page</h1></div></html>");
+  res.send(`<html><div style='text-align:center;margin-top:20%'><h1>${process.env.MY_SECRET_ENV} secret code on the main Page</h1></div></html>`);
 });
 
 const port = process.env.port || '8080';
